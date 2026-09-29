@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trustedpremier Online Bank - Support</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      color: #17252a;
+    }
+
+    header {
+      background: #073b4c;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo span {
+      color: #8bd3dd;
+    }
+
+    .chat-container {
+      max-width: 800px;
+      margin: 35px auto;
+      padding: 0 15px;
+    }
+
+    .chat-box {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,.08);
+    }
+
+    .chat-header {
+      background: #0b596e;
+      color: white;
+      padding: 20px;
+    }
+
+    .chat-header h2 {
+      margin: 0 0 6px;
+    }
+
+    .chat-header p {
+      margin: 0;
+      opacity: .85;
+      font-size: 14px;
+    }
+
+    .messages {
+      height: 450px;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      line-height: 1.5;
+    }
+
+    .customer {
+      margin-left: auto;
+      background: #073b4c;
+      color: white;
+    }
+
+    .support {
+      background: #e9f4f5;
+      color: #17252a;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      padding: 15px;
+      border-top: 1px solid #ddd;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #073b4c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 20px;
+      cursor: pointer;
+    }
+
+    .notice {
+      text-align: center;
+      padding: 12px;
+      background: #fff3cd;
+      color: #664d03;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    Trustedpremier <span>Online Bank</span>
+  </div>
+
+  <div>🇷🇴 RON</div>
+</header>
+
+<div class="notice">
+  Platformă de simulare — fără servicii bancare reale.
+</div>
+
+<div class="chat-container">
+
+  <div class="chat-box">
+
+    <div class="chat-header">
+      <h2>Customer Support</h2>
+      <p>We are here to help with your questions and complaints.</p>
+    </div>
+
+    <div class="messages" id="messages">
+
+      <div class="message support">
+        Hello! Welcome to Trustedpremier Online Bank support.
+        How can we help you today?
+      </div>
+
+    </div>
+
+    <div class="input-area">
+
+      <input
+        id="messageInput"
+        type="text"
+        placeholder="Write your message..."
+      >
+
+      <button onclick="sendMessage()">
+        Send
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function sendMessage() {
+
+  const input = document.getElementById("messageInput");
+  const messages = document.getElementById("messages");
+
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  const message = document.createElement("div");
+
+  message.className = "message customer";
+
+  message.textContent = text;
+
+  messages.appendChild(message);
+
+  input.value = "";
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+</script>
+
+</body>
+</html>
